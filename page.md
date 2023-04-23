@@ -15,7 +15,7 @@ Now here's what happens when we want to add another message:
 ![Image](tryingCommands1.png) (add-message?s=How are you)
 ![Image](tryingCommands2.png) (loading back the board)
 
-After looking at this, you must be thinking, this guy has to be a master coder and a genious server creator! But it is much simpler than it looks, take a look at my code below and I will discuss wht is going on.
+After looking at this, you must be thinking, this guy has to be a master coder and a genious server creator! But it is much simpler than it looks, take a look at my code below and I will discuss what is going on.
 ![Image](tryingCommands1.png) (StringServer code)
 
 When first initiating the server we get a blank page. This happens because in the "String" method the first if statement checks to see if the arguement "url" has a slash at the end of it. In this case our url arguement is "localhost:3020," but if you notice there is no slash at the end, well technically there is, it is inferred! If I were to just highlight and copy what is in the search bar and paste it with no edits, you get: http://localhost:3020/. Notice the Slash! So our a String method first checks if the url has a slash at the end by getting its path and currently the only part of the path is the slash. So the if statement runs. First we set a local variable named "string_to_print" to a string that is nothing, we do this so that each time we want to add a new message to the board, we clear the old message from what we may have added to string_to_print previously. Now we go through our for loop which doesn't run because "stringList" has a size of 0 currently, skipping the for loop and returning the empty string_to_print, giving us our blank screen. The field stringList will be used shortly though.
@@ -24,4 +24,12 @@ When we want to add a message to the board, as seen in the 2nd picture of the pa
 
 Now when we return to the link original link, we will now see the message "Hello" on the board. This happened through the same process in the first paragrapgh, but now we see that our stringList has a size of 1, because it currently looks like this: {"Hello"}. So our for loop will run one time adding to our empty string_to_print the 0th index of stringList, which is hello "Hello", along with an additional new line statement. string_to_print is then returned, printing out "Hello" and the new line, but we can't see the new line.
 
-When adding another message to the board we will repeat paragraph 2, entering whatever message we want, we will take "How are you" for an example. When we return to the original link, we will set our string_to_print back to empty and then enter our for loop which will now run twice because our stringList now has a size of two looking like: {"Hello", "How are you"}.
+When adding another message to the board we will repeat paragraph 2, entering whatever message we want, we will take "How are you" for an example. When we return to the original link, we will set our string_to_print back to empty and then enter our for loop which will now run twice because our stringList now has a size of two looking like: {"Hello", "How are you"}. So now each string of stringList will get added to string_to_print, with "How are you" printing under "Hello" do to the new line comment we add each time we add an item of stringList to string_to_print. This gives us our final output we can see on the 4th picture of the page. We can keep adding all the messages we want to the board, each time it will follow the process of code just explained!
+
+## Part 2
+
+
+## Part 3
+Something new I learned is how to run JUnit on Java, previously I have only used it on Eclipse. It worked well running it in Java, but I like it better in Eclipse. In Eclipse it has some better visuals and navigations to go around and see which tests either failed, passed, or had an error on.
+
+
